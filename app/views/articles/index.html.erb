@@ -1,0 +1,12 @@
+<% provide(:page_title, 'All Posts') %>
+<% provide(:blog_active, 'active') %>
+
+<div class="row">
+        <%= render @articles %>
+</div>
+
+
+<br>
+
+<%= link_to 'New Article', new_article_path %>
+</div>
