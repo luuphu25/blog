@@ -9,7 +9,7 @@ Submitted by: **Luu Duc Phu**
 
 Time spent: **15** hours spent in total
 
-URL: **Insert your Heroku URL here**
+URL: **phublog.herokuapp.com**
 
 ## User Stories
 
@@ -36,6 +36,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
+![Video Walkthrough](http://i.imgur.com/hTfB8ap.gifv)
 
 
 ## Notes
