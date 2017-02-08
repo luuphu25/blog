@@ -14,4 +14,5 @@ class CommentsController < ApplicationController
 
   def find_articles
     @article = Article.find(params[:article_id])
+  end
 end
