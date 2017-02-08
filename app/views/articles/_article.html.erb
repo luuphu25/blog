@@ -2,12 +2,12 @@
     <div class="card">
       <div class="card-block">
         <h4 class="card title"><%= link_to article.title, article %></h4>
-        <p class="card-text"><%= @markdown.render(article.body).html_safe %> </p>
+        <h6><%= article.created_at.strftime('%b %d, %Y') %></h6>
+        <p class="card-text"><%= markdown((article.body).truncate(400)) %> </p>
         <% link_to 'Read more', article, class: 'btn btn-read' %>
       </div>
-      <div clas="card-footer">
-        <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-warning' %>
-        <%= link_to 'Delete', article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-warning' %>
+      <div class="text-left">
+          <%= link_to "READ MORE", article_path(article) , class:'btn btn-warning' %>
         </div>
     </div>
   </div>
