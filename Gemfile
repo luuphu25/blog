@@ -12,7 +12,7 @@ gem 'rails', '~> 5.0.1'
 
 group :production do
   gem 'pg'
-  
+
 end
 # Use postgresql as the database for Active Record
 
@@ -43,6 +43,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'friendly_id', '~> 5.1.0'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'redcarpet'
+gem 'tether-rails'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
