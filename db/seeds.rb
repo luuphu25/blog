@@ -9,7 +9,7 @@
 Article.delete_all
 
 Article.create(
-
+  id: 1,
   title: "A Dream Within A Dream",
   body:
       %Q{Take this kiss upon the brow!
@@ -44,7 +44,7 @@ Article.create(
 )
 
 Article.create(
-
+  id:2,
   title: "A Blank Letter",
   body:
   %Q{
@@ -81,7 +81,7 @@ hieroglyphics, unsolved, but crystal-clear.
 )
 
 Article.create(
-  
+  id:3,
   title:'Funny -- to be a Century --',
 
   body:%Q{
@@ -98,6 +98,8 @@ Article.create(
                               **by Emily Dickinson**
 
   }
+
+
 
 
 )

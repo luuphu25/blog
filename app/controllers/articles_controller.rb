@@ -17,6 +17,8 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
     @articles = Article.friendly.find(params[:id])
+    @comment = Comment.new
+    @comment.article_id = @article.id
   end
 
   # GET /articles/new

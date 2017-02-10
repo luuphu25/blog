@@ -1,18 +1,35 @@
 class CommentsController < ApplicationController
   before_action :find_articles
   def create
-    @comment = @wine.comments.create(params[:comment].permit(:content))
-    @comment.save
-    if @comment.save
-      redirect_to article_path(@articles)
-    else
-      render 'new'
+  @comment = Comment.new(comment_params)
+  
+  @comment.article_id = @article.id
+  @comment.save
+
+  redirect_to article_path(@comment.article)
+  end
+
+
+
+    def destroy
+      @article = Article.find(params[:article_id])
+      @comment.destroy
+      respond_to do |format|
+        format.html{redirect_to @article}
+        format.js
+      end
     end
-  end
 
-  private
+    def comment_params
+      params.require(:comment).permit(:author_name, :body)
+    end
+    private
 
-  def find_articles
-    @article = Article.find(params[:article_id])
-  end
+   def find_articles
+     @article = Article.friendly.find(params[:article_id])
+   end
+
+
+
+
 end

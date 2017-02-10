@@ -25,11 +25,12 @@ ActiveRecord::Schema.define(version: 20170208135521) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.text     "content"
-    t.integer  "articles_id"
+    t.string   "author_name"
+    t.text     "body"
+    t.integer  "article_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["articles_id"], name: "index_comments_on_articles_id", using: :btree
+    t.index ["article_id"], name: "index_comments_on_article_id", using: :btree
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -44,5 +45,5 @@ ActiveRecord::Schema.define(version: 20170208135521) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
   end
 
-  add_foreign_key "comments", "articles", column: "articles_id"
+  add_foreign_key "comments", "articles"
 end
