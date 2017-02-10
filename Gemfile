@@ -43,7 +43,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'friendly_id', '~> 5.1.0'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'redcarpet'
-gem 'tether-rails'
+gem 'rails-assets-tether', '>= 1.1.0'
 
 
 group :development, :test do
