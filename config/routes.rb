@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :articles do
   resources :comments
   end
+  resources :tags
+
 
   get 'about' => 'pages#about', as: :about
   root to: '_articles#index'

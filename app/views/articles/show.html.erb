@@ -14,6 +14,13 @@ slug:
 </p>
 
 
+            Tags:
+            <% @article.tags.each do |tag| %>
+            <%= link_to tag.name, tag_path(tag), class:'label label-default' %>
+            <% end %>
+</p>
+
+
 <div class="card">
             <div class="card-header"> Comments (<%= @article.comments.size %>)</div>
             <div class="card-block">
