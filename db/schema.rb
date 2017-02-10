@@ -18,9 +18,10 @@ ActiveRecord::Schema.define(version: 20170210152437) do
   create_table "articles", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
+    t.integer  "num_view",   default: 0
     t.string   "slug"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.index ["slug"], name: "index_articles_on_slug", unique: true, using: :btree
   end
 

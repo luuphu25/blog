@@ -3,6 +3,7 @@ class CreateArticles < ActiveRecord::Migration[5.0]
     create_table :articles do |t|
       t.string :title
       t.text :body
+      t.integer :num_view, default: 0
       t.string :slug
 
       t.timestamps
