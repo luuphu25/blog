@@ -1,40 +1,19 @@
-<div class="collapse" id="exCollapsingNavbar">
-  <div class="collapse-bg p-a-1">
-    <div class='card'>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-          <%= link_to 'Blog', root_path, class: "nav-link #{yield(:blog_active)}" %>
-        </li>
-        <li class="list-group-item">
-          <%= link_to 'About', about_path, class: "nav-link #{yield(:about_active)}" %>
-        </li>
-
-      </ul>
-    </div>
+<div class="ui inverted segment">
+  <div class="ui inverted secondary pointing menu">
+    <a class="active item">
+      Home
+    </a>
+    <a class="item">
+      Article
+    </a>
+    <a class="item">
+      Login
+    </a>
+    <%= form_tag(articles_path, method: 'get', class: 'item right-menu') do %>   
+    <div class="ui icon input">
+      <%= search_field_tag :search, nil , placeholder:"Search articles..." ,type:"text" %>
+      <i class="search link icon"></i>
+    </div>    
+    <% end %> 
   </div>
 </div>
-
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="navbar-brand">Phu's blogs</a>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to 'Blog', articles_path, class: "nav-link #{yield(:blog_active)}" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to 'About', about_path, class: "nav-link #{yield(:about_active)}" %>
-      </li>
-
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-
-      <%= text_field_tag :search, params[:search], class:"form-control mr-sm-2",placeholder:"Search for.." , id: "search-form" %>
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-
-    </form>
-  </div>
-</nav>

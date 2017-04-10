@@ -1,16 +1,16 @@
-<div class= 'col-sm-6 col-lg-4'>
-    <div class="card">
-      <div class="card-block">
-        <h4 class="card title"><%= link_to article.title, article %></h4>
-        <h6><%= article.created_at.strftime('%b %d, %Y') %></h6>
-        <p class="card-text"><%= markdown((article.body).truncate(400)) %> </p>
-        <b>views:</b>
-          <p><%= article.num_view %></p>
-
-        <% link_to 'Read more', article, class: 'btn btn-read' %>
+<div class="ui centered card mt-10">
+    <div class="content center aligned">      
+      <div class="header">
+        <%= link_to article.title, article %>
       </div>
-      <div class="text-left">
-          <%= link_to "READ MORE", article_path(article) , class:'btn btn-warning' %>
-        </div>
+      <div class="meta right floated">Writed :<%= article.created_at.strftime('%b %d, %Y') %></div>
+      <div class="ui description">  
+        <%= markdown((article.body).truncate(400)) %> 
+      </div>
     </div>
-  </div>
+    <div class="extra content">
+      <div class="right floated">
+              <%= link_to "Read More", article_path(article.id), class:"ui green button" %>
+      </div>
+    </div>
+</div>

@@ -1,8 +1,9 @@
 <% provide(:page_title, 'All Posts') %>
 <% provide(:blog_active, 'active') %>
-
-<div class="row">
-        <%= render @articles %>
+<div class="ui centered grid">
+	<div class="eight wide column">	
+	<%= render @articles %>
+	</div>
 </div>
 
 

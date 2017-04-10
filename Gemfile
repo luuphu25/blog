@@ -36,14 +36,15 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'friendly_id', '~> 5.1.0'
-gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'redcarpet'
 gem 'rails-assets-tether', '>= 1.1.0'
+gem 'semantic-ui-sass', git: 'https://github.com/doabit/semantic-ui-sass.git'
+
 
 
 group :development, :test do
