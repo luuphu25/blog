@@ -1,41 +1,48 @@
 <% provide(:page_title, @article.title ) %>
 <p id="notice"><%= notice %></p>
-<div class="col-sm-11 col-xs-12 blog-content">
-<h2 class = "text-center">
-  <%= @article.title %>
-</h2>
-<h6 class="text-left" ><b> published : <%= @article.created_at.strftime('%b %d, %Y') %></b></h6>
-
-<p class="card-text"><%=  markdown(@article.body) %> </p>
-</div>
-<p>
-slug:
-  <%= @article.slug %>
-  <b>views:</b>
-        <%= @articles.num_view %>
-
-</p>
-
-
-            Tags:
-            <% @article.tags.each do |tag| %>
-            <%= link_to tag.name, tag_path(tag), class:'label label-default' %>
-            <% end %>
-</p>
-
-
-<div class="card">
-            <div class="card-header"> Comments (<%= @article.comments.size %>)</div>
-            <div class="card-block">
-
-            <div class="card-text">
-                <%= render partial: 'articles/comment', collection: @article.comments %>
-                <%= render partial: 'comments/form' %>
-
-  </div>
-  </div>
-  </div>
-<%= link_to 'Edit', edit_article_path(@article) %> |
+<div class="ui centered grid">
+  <div class="eight wide column"> 
+    <div class="ui card">
+      <div class="content">
+        <div class="header">
+          <%= @article.title %>
+        </div>
+        <div class="meta right floated" style="margin-bottom: 15px;">
+          published : <%= @article.created_at.strftime('%b %d, %Y') %>
+        </div>
+        <div class="description">
+          <%=  markdown(@article.body) %>
+        </div>
+      </div>
+      <div class="extra content">
+        <div class="left floated">
+        Views : <%= @article.num_view %>
+        </div>
+        <div class="right floated">
+         Tags:
+         <% @article.tags.each do |tag| %>
+         <%= link_to tag.name, tag_path(tag), class:'label label-default' %>
+         <% end %>
+       </div>
+     </div>
+   </div>
+   <div class="ui comments">    
+       <h3 class="ui dividing header">Comments (<%= @article.comments.size %>)</h3>        
+            <%= render partial: 'articles/comment', collection: @article.comments %>
+         
+            <div class="ui replay form">          
+              <div class="field">
+                    <%= render partial: 'comments/form' %>         
+              </div>
+           </div>
+          </div>
+       </div> 
+   </div>
+ </div>
+ <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to "Delete",@article, method: :delete, data: { confirm: 'Are you sure?'}  %> |
 
 <%= link_to 'Back', articles_path %>
+</div>
+
+</div>
